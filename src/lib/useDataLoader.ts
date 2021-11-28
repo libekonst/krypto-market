@@ -1,19 +1,19 @@
 import { useEffect, useReducer } from 'react';
 
 type DataLoading = {
-  status: 'LOADING';
+  isLoading: true;
   error: undefined;
   data: undefined;
 };
 
 type DataSuccess<T> = {
-  status: 'SUCCESS';
+  isLoading: false;
   error: undefined;
   data: T;
 };
 
 type DataFailure = {
-  status: 'FAILURE';
+  isLoading: false;
   error: string;
   data: undefined;
 };
@@ -21,11 +21,11 @@ type DataFailure = {
 type LoaderResponse<T> = DataLoading | DataFailure | DataSuccess<T>;
 
 export const isLoading = <T>(res: LoaderResponse<T>): res is DataLoading =>
-  res.status === 'LOADING';
+  res.isLoading && !res.data && !res.error;
 export const isFailure = <T>(res: LoaderResponse<T>): res is DataFailure =>
-  res.status === 'FAILURE';
+  !res.isLoading && !res.data && res.error !== undefined;
 export const isSuccess = <T>(res: LoaderResponse<T>): res is DataSuccess<T> =>
-  res.status === 'SUCCESS';
+  !res.isLoading && res.data !== undefined && !res.error;
 
 const createDataLoading = () =>
   <const>{
