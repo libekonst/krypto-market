@@ -27,12 +27,22 @@ export const isFailure = <T>(res: LoaderResponse<T>): res is DataFailure =>
 export const isSuccess = <T>(res: LoaderResponse<T>): res is DataSuccess<T> =>
   !res.isLoading && res.data !== undefined && !res.error;
 
-const createDataLoading = () =>
-  <const>{
-    status: 'LOADING',
-    error: undefined,
-    data: undefined
-  };
+export const createDataLoading = (): DataLoading => ({
+  isLoading: true,
+  error: undefined,
+  data: undefined
+});
+export const createDataFailure = (error: string): DataFailure => ({
+  isLoading: false,
+  error,
+  data: undefined
+});
+
+export const createDataSuccess = <T>(data: T): DataSuccess<T> => ({
+  isLoading: false,
+  error: undefined,
+  data
+});
 
 type Action<T> =
   | { type: 'FETCH_STARTED' }
@@ -44,12 +54,12 @@ const createTypedReducer =
   (state: LoaderResponse<T>, action: Action<T>): LoaderResponse<T> => {
     switch (action.type) {
       case 'FETCH_FAILED':
-        return { status: 'FAILURE', data: undefined, error: action.payload };
+        return createDataFailure(action.payload);
       case 'FETCH_SUCCESS':
-        return { status: 'SUCCESS', data: action.payload, error: undefined };
+        return createDataSuccess(action.payload);
       default:
       case 'FETCH_STARTED':
-        return { status: 'LOADING', data: undefined, error: undefined };
+        return createDataLoading();
     }
   };
 
