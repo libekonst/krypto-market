@@ -8,7 +8,7 @@ export function RootNavigator() {
     <BrowserRouter>
       <Routes>
         <Route index element={<HomePage />} />
-        <Route path="coins/:coinId" element={<CoinPage />} />
+        <Route path=":coinId" element={<CoinPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>

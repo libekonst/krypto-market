@@ -9,13 +9,13 @@ export function UnknownCoinErrorView() {
       <p>Try one of these instead</p>
       <ul>
         <li>
-          <Link to="/coins/bitcoin">Bitcoin</Link>
+          <Link to="/bitcoin">Bitcoin</Link>
         </li>
         <li>
-          <Link to="/coins/ethereum">Ethereum</Link>
+          <Link to="/ethereum">Ethereum</Link>
         </li>
         <li>
-          <Link to="/coins/binancecoin">Binance Coin</Link>
+          <Link to="/binancecoin">Binance Coin</Link>
         </li>
       </ul>
       <p>
