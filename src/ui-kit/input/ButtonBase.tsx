@@ -15,4 +15,5 @@ export const ButtonBase = styled.button`
   -moz-appearance: none;
 
   border-radius: 8px;
+  background-color: ${props => props.theme.colors.background};
 `;
