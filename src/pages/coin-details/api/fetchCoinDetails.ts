@@ -10,12 +10,12 @@ export const fetchCoinDetails = async (id?: string) => {
   if (!id) throw new Error('No coin id');
 
   const url = `${BASE_URL}/${id}?localization=${WANTS_LOCALIZATION}&tickers=${WANTS_TICKERS}&sparkline=${WANTS_SPARKLINE}`;
-  // const res = await fetch(url);
-  // const data: CoinDetailsAPIResponse = await res.json();
+  const res = await fetch(url);
+  const data: CoinDetailsAPIResponse = await res.json();
 
-  await delay(400);
+  // await delay(400);
 
-  return mapToCoinAnalysis(mockData);
+  return mapToCoinAnalysis(data);
 };
 
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
