@@ -4,6 +4,7 @@ import { Column } from '../../../ui-kit/layout/Column';
 import { Row } from '../../../ui-kit/layout/Row';
 import { Header } from './Header';
 import { LinkBase } from './LinkBase';
+import { shortenLink } from './shortenLink';
 
 type Props = {
   links: string[];
@@ -18,7 +19,7 @@ export function WebLinks({ links }: Props) {
       {links.map(link => (
         <LinkBase target="blank" href={link}>
           <Row>
-            <BiWorld /> <Text>{link}</Text>
+            <BiWorld /> <Text>{shortenLink(link)}</Text>
           </Row>
         </LinkBase>
       ))}
