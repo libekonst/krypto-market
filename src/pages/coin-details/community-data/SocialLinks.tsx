@@ -10,6 +10,7 @@ import { Row } from '../../../ui-kit/layout/Row';
 import { CoinAnalysis } from '../CoinAnalysis';
 import { Header } from './Header';
 import { LinkBase } from './LinkBase';
+import { shortenLink } from './shortenLink';
 
 type Props = {
   coinAnalysis: CoinAnalysis;
@@ -66,7 +67,11 @@ export function SocialLinks({ coinAnalysis }: Props) {
       />
       {githubLinks &&
         githubLinks.map(link => (
-          <SocialButton link={link} name={link} icon={<AiFillGithub />} />
+          <SocialButton
+            link={link}
+            name={shortenLink(link)}
+            icon={<AiFillGithub />}
+          />
         ))}
     </Column>
   );
