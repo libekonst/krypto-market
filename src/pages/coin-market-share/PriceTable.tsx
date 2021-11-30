@@ -70,7 +70,7 @@ export function PriceTable() {
 
 const Wrapper = styled.main`
   width: 100%;
-  max-width: 70vw;
+  max-width: 70vmax;
   margin: auto;
   padding-bottom: 7rem;
   margin-top: 3rem;
