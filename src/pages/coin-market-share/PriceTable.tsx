@@ -4,10 +4,9 @@ import {
   isLoading,
   isSuccess,
   useDataLoader
-} from '../../../lib/useDataLoader';
-import { Spinner } from '../../../ui-kit/feedback/Spinner';
-import { LightButton } from '../../../ui-kit/input/LightButton';
-import { Row } from '../../../ui-kit/layout/Row';
+} from '../../lib/useDataLoader';
+import { Spinner } from '../../ui-kit/feedback/Spinner';
+import { LightButton } from '../../ui-kit/input/LightButton';
 import { getCoinMarketPrices } from './api';
 import { CoinMarketPrice } from './CoinMarketPrice';
 

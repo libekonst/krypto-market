@@ -11,7 +11,7 @@ test('isCoinMarketPrice asserts the input is of type CoinMarketPrice when all th
     high_24h: 55426,
     low_24h: 53587,
     price_change_24h: 705.99,
-    price_change_percentage_24h: 1.303,
+    price_change_percentage_24h: 1.303
   };
 
   expect(isCoinMarketPrice(coinStrict)).toBe(true);
@@ -45,7 +45,7 @@ test('isCoinMarketPrice asserts the input is of type CoinMarketPrice, whitelisti
     atl_change_percentage: 80957.24108,
     atl_date: '2013-07-06T00:00:00.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:11.706Z',
+    last_updated: '2021-11-27T11:15:11.706Z'
   };
 
   expect(isCoinMarketPrice(coinStrict)).toBe(true);
@@ -77,7 +77,7 @@ test('isCoinMarketPrice returns false when the input is missing requiredProperti
     atl_change_percentage: 80957.24108,
     atl_date: '2013-07-06T00:00:00.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:11.706Z',
+    last_updated: '2021-11-27T11:15:11.706Z'
   };
 
   expect(isCoinMarketPrice(coinWithMissingProperties)).toBe(false);
