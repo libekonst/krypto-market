@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { LightButton } from './ui-kit/input/LightButton';
+import { PrimaryButton } from './ui-kit/input/PrimaryButton';
 import { Row } from './ui-kit/layout/Row';
 
 export function AppHeader() {
@@ -7,7 +7,7 @@ export function AppHeader() {
     <Wrapper>
       <Row mainAxis="space-between">
         <Logo />
-        <LightButton>Log in</LightButton>
+        <PrimaryButton>Log in</PrimaryButton>
       </Row>
     </Wrapper>
   );
