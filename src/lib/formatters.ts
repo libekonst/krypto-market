@@ -1,17 +1,30 @@
+const currencyFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD'
+});
+
+const percentageFormatter = new Intl.NumberFormat('en-US', {
+  style: 'percent',
+  maximumFractionDigits: 2
+});
+
+const dateFormatter = new Intl.DateTimeFormat('en-US', {
+  dateStyle: 'long'
+});
+
 export const formatPrice = (x?: number | null) => {
   if (!x) return;
-  return withUsdCurrency(roundAndStringify(x));
+
+  return currencyFormatter.format(x);
 };
 export const formatPercentage = (x?: number | null) => {
   if (!x) return;
-  return withPercentage(roundAndStringify(x));
-};
-export const formatDate = (dateISO?: string | null) =>
-  dateISO ? new Date(dateISO).toDateString() : undefined;
-const roundAndStringify = (x: number) => {
-  if (Number.isInteger(x)) return `${x}`;
 
-  return `${x.toFixed(1)}`;
+  return percentageFormatter.format(x / 100);
 };
-const withUsdCurrency = (x: string) => `$${x}`;
-const withPercentage = (x: string) => `${x}%`;
+
+export const formatDate = (dateISO?: string | null) => {
+  if (!dateISO) return;
+
+  return dateFormatter.format(new Date(dateISO));
+};
