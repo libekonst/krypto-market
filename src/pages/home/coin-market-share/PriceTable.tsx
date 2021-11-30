@@ -6,6 +6,7 @@ import {
   useDataLoader
 } from '../../../lib/useDataLoader';
 import { Spinner } from '../../../ui-kit/feedback/Spinner';
+import { LightButton } from '../../../ui-kit/input/LightButton';
 import { Row } from '../../../ui-kit/layout/Row';
 import { getCoinMarketPrices } from './api';
 import { CoinMarketPrice } from './CoinMarketPrice';
@@ -26,7 +27,7 @@ export function PriceTable() {
 
   return (
     <>
-      <table>
+      <table style={{ marginBottom: '2rem' }}>
         <tbody>
           {accumulatedData.map((coinPrice, i) => (
             <tr
@@ -54,7 +55,7 @@ export function PriceTable() {
       {isFailure(res) && <p>{res.error}</p>}
       {isLoading(res) && <Spinner />}
 
-      <button onClick={loadMorePrices}>MOAR</button>
+      <LightButton onClick={loadMorePrices}>Load more data</LightButton>
     </>
   );
 }
