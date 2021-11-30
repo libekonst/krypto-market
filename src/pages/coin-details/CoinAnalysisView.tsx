@@ -4,23 +4,30 @@ import { PriceChart } from './PriceChart';
 import { CommunityCard } from './community-data/CommunityCard';
 import { HeaderBackButton } from './HeaderBackButton';
 import { CoinAnalysis } from './CoinAnalysis';
+import styled from 'styled-components';
 
 type Props = {
   coin: CoinAnalysis;
 };
 export function CoinAnalysisView({ coin }: Props) {
   return (
-    <>
-      <Row style={{ padding: 5 }}>
+    <Wrapper>
+      <BackButtonPositioner>
         <HeaderBackButton />
-      </Row>
-
-      <div>{coin.id}</div>
+      </BackButtonPositioner>
       <Row crossAxis="flex-start">
         <MarketStatisticsBox coinAnalysis={coin} />
         <CommunityCard coinAnalysis={coin} />
       </Row>
       <PriceChart />
-    </>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.main`
+  padding: 1rem 3rem;
+`;
+
+const BackButtonPositioner = styled.div`
+  padding: 5;
+`;
