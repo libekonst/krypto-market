@@ -19,6 +19,7 @@ const Wrapper = styled.header`
   position: sticky;
   top: 0;
   border-bottom: 1px solid ${props => props.theme.colors.lightShade};
+  z-index: 10;
 `;
 
 function Logo() {
