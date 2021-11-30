@@ -1,3 +1,4 @@
+import { mapToMarketPrice } from './mapToMarketPrice';
 import { MarketPriceAPIResponse } from './MarketPriceAPIResponse';
 
 const baseUrl = 'https://api.coingecko.com/api/v3/coins/markets';
@@ -5,17 +6,17 @@ const TARGET_CURRENCY = 'USD';
 const COINS_PER_PAGE = '100';
 const SORT_ORDER = 'market_cap_desc';
 
-export const getCoinMarketPrices = async (page = 1) => {
+export const fetchCoinMarketPrices = async (page = 1) => {
   const url = `${baseUrl}?vs_currency=${TARGET_CURRENCY}&order=${SORT_ORDER}&per_page=${COINS_PER_PAGE}&page=${page}&sparkline=false`;
 
   await delay(400);
 
-  return mockData as MarketPriceAPIResponse[];
+  return mockData.map(mapToMarketPrice);
 };
 
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
-const mockData = [
+const mockData: MarketPriceAPIResponse[] = [
   {
     id: 'bitcoin',
     symbol: 'btc',

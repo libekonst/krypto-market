@@ -13,21 +13,19 @@ import { Row } from '../../ui-kit/layout/Row';
 import { PriceMetricLabel } from '../PriceMetricLabel';
 import { CoinThumb } from '../CoinThumb';
 import { NamePriceBox } from '../NamePriceBox';
-import { getCoinMarketPrices } from './api';
-import { MarketPriceAPIResponse } from './MarketPriceAPIResponse';
+import { fetchCoinMarketPrices } from './api/fetchCoinMarketPrices';
+import { MarketPrice } from './MarketPrice';
 
 export function PriceTable() {
   const [paginationCount, setPaginationCount] = useState(1);
   const loadMorePrices = () => setPaginationCount(prevCount => prevCount + 1);
   const getData = useCallback(
-    () => getCoinMarketPrices(paginationCount),
+    () => fetchCoinMarketPrices(paginationCount),
     [paginationCount]
   );
   const res = useDataLoader(getData);
 
-  const [accumulatedData, setAccumulatedData] = useState<
-    MarketPriceAPIResponse[]
-  >([]);
+  const [accumulatedData, setAccumulatedData] = useState<MarketPrice[]>([]);
   useEffect(() => {
     if (isSuccess(res)) setAccumulatedData(prev => [...prev, ...res.data]);
   }, [res]);
@@ -42,18 +40,18 @@ export function PriceTable() {
               <NamePriceBox
                 name={coin.name}
                 symbol={coin.symbol}
-                currentPrice={`${coin.current_price}`}
-                percentageChange={`${coin.price_change_percentage_24h}`}
+                currentPrice={coin.currentPrice}
+                percentageChange={coin.priceChangePercentage24h}
               />
             </Row>
             <Column mainAxis="space-evenly" crossAxis="flex-end">
               <PriceMetricLabel
                 label="Daily Lowest"
-                value={`${coin.low_24h}`}
+                value={coin.dailyLowestPrice}
               />
               <PriceMetricLabel
                 label="Daily Highest"
-                value={`${coin.high_24h}`}
+                value={coin.dailyHighestPrice}
               />
             </Column>
           </Row>
