@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import styled from 'styled-components';
 import {
   isFailure,
   isLoading,
@@ -7,6 +8,11 @@ import {
 } from '../../lib/useDataLoader';
 import { Spinner } from '../../ui-kit/feedback/Spinner';
 import { LightButton } from '../../ui-kit/input/LightButton';
+import { Column } from '../../ui-kit/layout/Column';
+import { Row } from '../../ui-kit/layout/Row';
+import { PriceMetricLabel } from '../PriceMetricLabel';
+import { CoinThumb } from '../CoinThumb';
+import { NamePriceBox } from '../NamePriceBox';
 import { getCoinMarketPrices } from './api';
 import { CoinMarketPrice } from './CoinMarketPrice';
 
@@ -25,31 +31,32 @@ export function PriceTable() {
   }, [res]);
 
   return (
-    <>
-      <table style={{ marginBottom: '2rem' }}>
-        <tbody>
-          {accumulatedData.map((coinPrice, i) => (
-            <tr
-              // key={coinPrice.id} // TODO add this when using real data
-              key={i}
-              style={{
-                backgroundColor: 'red',
-                height: '80px',
-                flex: 1,
-                marginBottom: 10
-              }}
-            >
-              <td>{coinPrice.name}</td>
-              <td>{coinPrice.symbol}</td>
-              <td>{coinPrice.id}</td>
-              <td>{coinPrice.current_price}</td>
-              <td>{coinPrice.low_24h}</td>
-              <td>{coinPrice.high_24h}</td>
-              <td>{coinPrice.price_change_24h}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <Wrapper>
+      {accumulatedData.map((coin, i) => (
+        <Link key={i} href={`/${coin.id}`}>
+          <Row mainAxis="space-between">
+            <Row>
+              <CoinThumb src={coin.image} />
+              <NamePriceBox
+                name={coin.name}
+                symbol={coin.symbol}
+                currentPrice={`${coin.current_price}`}
+                percentageChange={`${coin.price_change_percentage_24h}`}
+              />
+            </Row>
+            <Column mainAxis="space-evenly" crossAxis="flex-end">
+              <PriceMetricLabel
+                label="Daily Lowest"
+                value={`${coin.low_24h}`}
+              />
+              <PriceMetricLabel
+                label="Daily Highest"
+                value={`${coin.high_24h}`}
+              />
+            </Column>
+          </Row>
+        </Link>
+      ))}
 
       {isFailure(res) && <p>{res.error}</p>}
       {isLoading(res) && <Spinner />}
@@ -57,6 +64,32 @@ export function PriceTable() {
       {!isLoading(res) && (
         <LightButton onClick={loadMorePrices}>Load more data</LightButton>
       )}
-    </>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.main`
+  width: 100%;
+  max-width: 70vw;
+  margin: auto;
+  padding-bottom: 7rem;
+  margin-top: 3rem;
+`;
+
+const Link = styled.a`
+  display: block;
+  background-color: transparent;
+  transition: filter 0.1s linear;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  color: inherit;
+  border-bottom: 1px solid ${props => props.theme.colors.lightShade};
+
+  &:hover {
+    filter: brightness(0.85);
+  }
+
+  &:active {
+    filter: brightness(0.8);
+  }
+`;
