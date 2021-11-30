@@ -15,7 +15,8 @@ export function AppHeader() {
 
 const Wrapper = styled.header`
   padding: 1rem 7rem 1rem 4rem;
-  background-color: white;
+  background-color: #ffffffba;
+  backdrop-filter: blur(12px) saturate(180%);
   position: sticky;
   top: 0;
   border-bottom: 1px solid ${props => props.theme.colors.lightShade};
