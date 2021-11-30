@@ -2,10 +2,10 @@ import { useParams } from 'react-router';
 import { useCallback } from 'react';
 import { fetchCoinDetails } from './api/fetchCoinDetails';
 import { UnknownCoinErrorView } from './views/UnknownCoinErrorView';
-import { SkeletonLoadingView } from './views/SkeletonLoadingView';
 import { isFailure, isLoading, useDataLoader } from '../../lib/useDataLoader';
 import { CoinAnalysisView } from './CoinAnalysisView';
 import { SomethingWentWrong } from './views/SomethingWentWrongView';
+import { Spinner } from '../../ui-kit/feedback/Spinner';
 
 export function CoinPage() {
   const { coinId } = useParams();
@@ -16,6 +16,6 @@ export function CoinPage() {
   if (isFailure(res) && res.error === 'No coin id')
     return <UnknownCoinErrorView />;
   if (isFailure(res)) return <SomethingWentWrong />;
-  if (isLoading(res)) return <SkeletonLoadingView />;
+  if (isLoading(res)) return <Spinner />;
   return <CoinAnalysisView coin={res.data} />;
 }

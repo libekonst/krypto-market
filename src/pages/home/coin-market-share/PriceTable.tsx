@@ -55,7 +55,9 @@ export function PriceTable() {
       {isFailure(res) && <p>{res.error}</p>}
       {isLoading(res) && <Spinner />}
 
-      <LightButton onClick={loadMorePrices}>Load more data</LightButton>
+      {!isLoading(res) && (
+        <LightButton onClick={loadMorePrices}>Load more data</LightButton>
+      )}
     </>
   );
 }
