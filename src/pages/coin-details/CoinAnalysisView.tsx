@@ -1,7 +1,7 @@
 import { Row } from '../../ui-kit/layout/Row';
 import { MarketStatisticsBox } from './market-statistics/MarketStatisticsBox';
 import { PriceChart } from './PriceChart';
-import { SocialsBox } from './SocialsBox';
+import { CommunityCard } from './community-data/CommunityCard';
 import { HeaderBackButton } from './HeaderBackButton';
 import { CoinAnalysis } from './CoinAnalysis';
 
@@ -16,11 +16,9 @@ export function CoinAnalysisView({ coin }: Props) {
       </Row>
 
       <div>{coin.id}</div>
-      <Row>
+      <Row crossAxis="flex-start">
         <MarketStatisticsBox coinAnalysis={coin} />
-      </Row>
-      <Row>
-        <SocialsBox />
+        <CommunityCard coinAnalysis={coin} />
       </Row>
       <PriceChart />
     </>

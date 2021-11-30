@@ -39,6 +39,6 @@ export function MarketStatisticsBox({ coinAnalysis }: Props) {
 }
 
 const WrapperBox = styled.section`
-  width: 100%;
+  flex: 1;
   padding: 1rem;
 `;

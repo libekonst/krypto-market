@@ -33,7 +33,7 @@ export function AdditionalMarketData(props: Props) {
   } = props;
 
   return (
-    <Row>
+    <Row style={{ marginTop: '2rem' }}>
       {dailyHighestPrice && (
         <PriceMetricLabel label="Daily Highest" value={dailyHighestPrice} />
       )}

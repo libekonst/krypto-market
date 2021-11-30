@@ -17,12 +17,21 @@ export const extractCommunityData = (
     twitterLink: links?.twitter_screen_name
       ? generateTwitterLink(links.twitter_screen_name)
       : undefined,
+    twitterName: links?.twitter_screen_name
+      ? generateSocialName(links?.twitter_screen_name)
+      : undefined,
     twitterStat: community_data?.twitter_followers ?? undefined,
     facebookLink: links?.facebook_username
       ? generateFacebookLink(links.facebook_username)
       : undefined,
+    facebookName: links?.facebook_username
+      ? generateSocialName(links.facebook_username)
+      : undefined,
     facebookStat: community_data?.facebook_likes ?? undefined, // Likes
     redditLink: links?.subreddit_url ?? undefined,
+    redditName: links?.subreddit_url
+      ? generateRedditName(links?.subreddit_url)
+      : undefined,
     redditStat: community_data?.reddit_subscribers ?? undefined, // Subs
     githubLinks: getGithubRepoLinks(res),
     githubStats: {
@@ -62,6 +71,14 @@ const generateTwitterLink = (accName: string) =>
   `https://twitter.com/${accName}`;
 const generateFacebookLink = (accName: string) =>
   `https://www.facebook.com/${accName}`;
+const generateSocialName = (accName: string) => `@${accName}`;
+const generateRedditName = (url: string) => {
+  const dilimiter = '/r/';
+  const position = url.indexOf(dilimiter);
+  if (position < 0) return;
+
+  return url.slice(position, url.length - 1);
+};
 
 const getGithubRepoLinks = (
   res: CoinDetailsAPIResponse
