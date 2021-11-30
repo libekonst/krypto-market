@@ -1,5 +1,5 @@
 import { Row } from '../../../ui-kit/layout/Row';
-import { PriceMetricLabel } from './PriceMetricLabel';
+import { PriceMetricLabel } from '../../PriceMetricLabel';
 
 type Props = {
   priceChangePercentage7d?: string;

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { Column } from '../../../ui-kit/layout/Column';
-import { Dot } from '../../../ui-kit/layout/Dot';
-import { Row } from '../../../ui-kit/layout/Row';
+import { Column } from '../ui-kit/layout/Column';
+import { Row } from '../ui-kit/layout/Row';
 
 type Props = {
   name: string;

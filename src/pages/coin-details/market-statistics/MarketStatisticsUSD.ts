@@ -1,7 +1,7 @@
 export type MarketStatisticsUSD = Partial<{
-  currentPrice: string; //
-  priceChange24h: string; //
-  priceChangePercentage24h: string; //
+  currentPrice: string;
+  priceChange24h: string;
+  priceChangePercentage24h: string;
   priceChangePercentage7d: string;
   priceChangePercentage14d: string;
   priceChangePercentage30d: string;

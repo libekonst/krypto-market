@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { Row } from '../../../ui-kit/layout/Row';
 import { AdditionalMarketData } from './AdditionalMarketData';
 import { CoinAnalysis } from '../CoinAnalysis';
-import { CoinThumb } from './CoinThumb';
-import { NamePriceBox } from './NamePriceBox';
+import { CoinThumb } from '../../CoinThumb';
+import { NamePriceBox } from '../../NamePriceBox';
 
 type Props = {
   coinAnalysis: CoinAnalysis;

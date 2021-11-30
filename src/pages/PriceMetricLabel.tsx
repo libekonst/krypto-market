@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Row } from '../../../ui-kit/layout/Row';
+import { Row } from '../ui-kit/layout/Row';
 
 type Props = {
   label: string;
