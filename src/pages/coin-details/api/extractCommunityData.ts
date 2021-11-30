@@ -77,7 +77,7 @@ const generateRedditName = (url: string) => {
   const position = url.indexOf(dilimiter);
   if (position < 0) return;
 
-  return url.slice(position, url.length - 1);
+  return url.slice(position);
 };
 
 const getGithubRepoLinks = (
