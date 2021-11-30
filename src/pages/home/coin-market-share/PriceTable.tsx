@@ -1,39 +1,34 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import {
+  isFailure,
+  isLoading,
+  isSuccess,
+  useDataLoader
+} from '../../../lib/useDataLoader';
 import { Spinner } from '../../../ui-kit/feedback/Spinner';
 import { Row } from '../../../ui-kit/layout/Row';
 import { getCoinMarketPrices } from './api';
 import { CoinMarketPrice } from './CoinMarketPrice';
 
 export function PriceTable() {
-  const [data, setData] = useState<CoinMarketPrice[]>([]);
   const [paginationCount, setPaginationCount] = useState(1);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | undefined>();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      setError(undefined);
-      try {
-        const additionalPrices = await getCoinMarketPrices(paginationCount);
-        setData(prev => [...prev, ...additionalPrices]);
-      } catch (error) {
-        if (isError(error)) setError(error.message);
-        else setError('Something went wrong');
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    fetchData();
-  }, [paginationCount]);
-
   const loadMorePrices = () => setPaginationCount(prevCount => prevCount + 1);
+  const getData = useCallback(
+    () => getCoinMarketPrices(paginationCount),
+    [paginationCount]
+  );
+  const res = useDataLoader(getData);
+
+  const [accumulatedData, setAccumulatedData] = useState<CoinMarketPrice[]>([]);
+  useEffect(() => {
+    if (isSuccess(res)) setAccumulatedData(prev => [...prev, ...res.data]);
+  }, [res]);
 
   return (
     <>
       <table>
         <tbody>
-          {data.map((coinPrice, i) => (
+          {accumulatedData.map((coinPrice, i) => (
             <tr
               // key={coinPrice.id} // TODO add this when using real data
               key={i}
@@ -41,11 +36,12 @@ export function PriceTable() {
                 backgroundColor: 'red',
                 height: '80px',
                 flex: 1,
-                marginBottom: 10,
+                marginBottom: 10
               }}
             >
               <td>{coinPrice.name}</td>
               <td>{coinPrice.symbol}</td>
+              <td>{coinPrice.id}</td>
               <td>{coinPrice.current_price}</td>
               <td>{coinPrice.low_24h}</td>
               <td>{coinPrice.high_24h}</td>
@@ -54,14 +50,11 @@ export function PriceTable() {
           ))}
         </tbody>
       </table>
-      {error && <p>{error}</p>}
 
-      {isLoading && <Spinner />}
+      {isFailure(res) && <p>{res.error}</p>}
+      {isLoading(res) && <Spinner />}
 
       <button onClick={loadMorePrices}>MOAR</button>
     </>
   );
 }
-
-const isError = (error: unknown): error is Error =>
-  (error as any)?.message !== undefined;
