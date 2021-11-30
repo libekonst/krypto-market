@@ -6,6 +6,7 @@ import { CoinAnalysis } from './CoinAnalysis';
 import styled from 'styled-components';
 import { Column } from '../../ui-kit/layout/Column';
 import { PriceChart } from './price-chart/PriceChart';
+import { DescriptionBox } from './DescriptionBox';
 
 type Props = {
   coin: CoinAnalysis;
@@ -18,7 +19,12 @@ export function CoinAnalysisView({ coin }: Props) {
       </BackButtonPositioner>
       <ContentPositioner>
         <Row crossAxis="flex-start" mainAxis="space-between">
-          <MarketStatisticsBox coinAnalysis={coin} />
+          <Column style={{ maxWidth: '45vw' }}>
+            <MarketStatisticsBox coinAnalysis={coin} />
+            {coin.description && (
+              <DescriptionBox>{coin.description}</DescriptionBox>
+            )}
+          </Column>
           <CommunityCard coinAnalysis={coin} />
         </Row>
         <PriceChart coinId={coin.id} />

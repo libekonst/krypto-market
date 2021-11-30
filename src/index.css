@@ -10,7 +10,13 @@ html,
 body {
   height: 100%;
   background-color: #fbfbfe;
+  color: #2a1d69;
 }
+#description-box a {
+  color: #2a1d69;
+  font-weight: bold;
+}
+
 body {
   text-rendering: optimizeSpeed;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
