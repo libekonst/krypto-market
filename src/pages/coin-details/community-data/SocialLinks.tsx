@@ -68,6 +68,7 @@ export function SocialLinks({ coinAnalysis }: Props) {
       {githubLinks &&
         githubLinks.map(link => (
           <SocialButton
+            key={link}
             link={link}
             name={shortenLink(link)}
             icon={<AiFillGithub />}

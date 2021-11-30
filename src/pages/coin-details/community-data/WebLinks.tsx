@@ -17,7 +17,7 @@ export function WebLinks({ links }: Props) {
     <Column crossAxis="flex-start" style={{ marginBottom: '1rem' }}>
       <Header>Community Links</Header>
       {links.map(link => (
-        <LinkBase target="blank" href={link}>
+        <LinkBase target="blank" href={link} key={link}>
           <Row>
             <BiWorld /> <Text>{shortenLink(link)}</Text>
           </Row>
