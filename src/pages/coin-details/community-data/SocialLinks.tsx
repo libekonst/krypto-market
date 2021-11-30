@@ -10,7 +10,7 @@ import { Row } from '../../../ui-kit/layout/Row';
 import { CoinAnalysis } from '../CoinAnalysis';
 import { Header } from './Header';
 import { LinkBase } from './LinkBase';
-import { shortenLink } from './shortenLink';
+import { shortenLink } from '../../../lib/shortenLink';
 
 type Props = {
   coinAnalysis: CoinAnalysis;

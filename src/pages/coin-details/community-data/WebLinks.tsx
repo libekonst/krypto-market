@@ -4,7 +4,7 @@ import { Column } from '../../../ui-kit/layout/Column';
 import { Row } from '../../../ui-kit/layout/Row';
 import { Header } from './Header';
 import { LinkBase } from './LinkBase';
-import { shortenLink } from './shortenLink';
+import { shortenLink } from '../../../lib/shortenLink';
 
 type Props = {
   links: string[];
