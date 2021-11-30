@@ -1,33 +1,36 @@
 import { Row } from '../../ui-kit/layout/Row';
 import { MarketStatisticsBox } from './market-statistics/MarketStatisticsBox';
-import { PriceChart } from './PriceChart';
 import { CommunityCard } from './community-data/CommunityCard';
 import { HeaderBackButton } from './HeaderBackButton';
 import { CoinAnalysis } from './CoinAnalysis';
 import styled from 'styled-components';
+import { Column } from '../../ui-kit/layout/Column';
+import { PriceChart } from './price-chart/PriceChart';
 
 type Props = {
   coin: CoinAnalysis;
 };
 export function CoinAnalysisView({ coin }: Props) {
   return (
-    <Wrapper>
+    <Column crossAxis="stretch">
       <BackButtonPositioner>
         <HeaderBackButton />
       </BackButtonPositioner>
-      <Row crossAxis="flex-start">
-        <MarketStatisticsBox coinAnalysis={coin} />
-        <CommunityCard coinAnalysis={coin} />
-      </Row>
-      <PriceChart />
-    </Wrapper>
+      <ContentPositioner>
+        <Row crossAxis="flex-start" mainAxis="space-between">
+          <MarketStatisticsBox coinAnalysis={coin} />
+          <CommunityCard coinAnalysis={coin} />
+        </Row>
+        <PriceChart coinId={coin.id} />
+      </ContentPositioner>
+    </Column>
   );
 }
 
-const Wrapper = styled.main`
-  padding: 1rem 3rem;
+const BackButtonPositioner = styled.div`
+  margin: 1rem;
 `;
 
-const BackButtonPositioner = styled.div`
-  padding: 5;
+const ContentPositioner = styled.div`
+  padding: 0 10rem 10rem;
 `;
