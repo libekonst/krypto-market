@@ -36,10 +36,6 @@ export function DescriptionBox({ children }: Props) {
           ></Paragraph>
         ))
       )}
-      {/*       
-      {showExpandButton && (
-        <TextButton onClick={() => setIsExpanded(true)}>More</TextButton>
-      )} */}
     </Box>
   );
 }
