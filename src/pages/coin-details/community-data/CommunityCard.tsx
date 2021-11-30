@@ -22,4 +22,5 @@ const Wrapper = styled.section`
   box-shadow: 1px 2px 8px ${props => props.theme.colors.lightShade};
   /* width: 5rem; */
   border-radius: 5px;
+  max-width: 25rem;
 `;
