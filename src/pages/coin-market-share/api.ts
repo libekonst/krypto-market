@@ -1,4 +1,4 @@
-import { CoinMarketPrice } from './CoinMarketPrice';
+import { MarketPriceAPIResponse } from './MarketPriceAPIResponse';
 
 const baseUrl = 'https://api.coingecko.com/api/v3/coins/markets';
 const TARGET_CURRENCY = 'USD';
@@ -10,7 +10,7 @@ export const getCoinMarketPrices = async (page = 1) => {
 
   await delay(400);
 
-  return mockData as CoinMarketPrice[];
+  return mockData as MarketPriceAPIResponse[];
 };
 
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
@@ -43,7 +43,7 @@ const mockData = [
     atl_change_percentage: 80957.24108,
     atl_date: '2013-07-06T00:00:00.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:11.706Z',
+    last_updated: '2021-11-27T11:15:11.706Z'
   },
   {
     id: 'ethereum',
@@ -74,9 +74,9 @@ const mockData = [
     roi: {
       times: 100.2358501775147,
       currency: 'btc',
-      percentage: 10023.585017751471,
+      percentage: 10023.585017751471
     },
-    last_updated: '2021-11-27T11:16:06.611Z',
+    last_updated: '2021-11-27T11:16:06.611Z'
   },
   {
     id: 'binancecoin',
@@ -105,7 +105,7 @@ const mockData = [
     atl_change_percentage: 1510812.31655,
     atl_date: '2017-10-19T00:00:00.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:16:15.049Z',
+    last_updated: '2021-11-27T11:16:15.049Z'
   },
   {
     id: 'tether',
@@ -134,7 +134,7 @@ const mockData = [
     atl_change_percentage: 75.26818,
     atl_date: '2015-03-02T00:00:00.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:11:05.943Z',
+    last_updated: '2021-11-27T11:11:05.943Z'
   },
   {
     id: 'solana',
@@ -163,7 +163,7 @@ const mockData = [
     atl_change_percentage: 39516.21753,
     atl_date: '2020-05-11T19:35:23.449Z',
     roi: null,
-    last_updated: '2021-11-27T11:16:18.921Z',
+    last_updated: '2021-11-27T11:16:18.921Z'
   },
   {
     id: 'cardano',
@@ -192,7 +192,7 @@ const mockData = [
     atl_change_percentage: 8030.99949,
     atl_date: '2020-03-13T02:22:55.044Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:45.000Z',
+    last_updated: '2021-11-27T11:15:45.000Z'
   },
   {
     id: 'ripple',
@@ -221,7 +221,7 @@ const mockData = [
     atl_change_percentage: 35516.57486,
     atl_date: '2014-05-22T00:00:00.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:00.242Z',
+    last_updated: '2021-11-27T11:15:00.242Z'
   },
   {
     id: 'usd-coin',
@@ -250,7 +250,7 @@ const mockData = [
     atl_change_percentage: 12.32884,
     atl_date: '2021-05-19T13:14:05.611Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:03.207Z',
+    last_updated: '2021-11-27T11:15:03.207Z'
   },
   {
     id: 'polkadot',
@@ -279,7 +279,7 @@ const mockData = [
     atl_change_percentage: 1217.09575,
     atl_date: '2020-08-20T05:48:11.359Z',
     roi: null,
-    last_updated: '2021-11-27T11:16:12.768Z',
+    last_updated: '2021-11-27T11:16:12.768Z'
   },
   {
     id: 'dogecoin',
@@ -308,7 +308,7 @@ const mockData = [
     atl_change_percentage: 239290.74073,
     atl_date: '2015-05-06T00:00:00.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:16:14.894Z',
+    last_updated: '2021-11-27T11:16:14.894Z'
   },
   {
     id: 'avalanche-2',
@@ -337,7 +337,7 @@ const mockData = [
     atl_change_percentage: 3790.44097,
     atl_date: '2020-12-31T13:15:21.540Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:58.867Z',
+    last_updated: '2021-11-27T11:15:58.867Z'
   },
   {
     id: 'shiba-inu',
@@ -366,7 +366,7 @@ const mockData = [
     atl_change_percentage: 70103473.63095,
     atl_date: '2020-11-28T11:26:25.838Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:52.932Z',
+    last_updated: '2021-11-27T11:15:52.932Z'
   },
   {
     id: 'crypto-com-chain',
@@ -395,7 +395,7 @@ const mockData = [
     atl_change_percentage: 6240.65645,
     atl_date: '2019-02-08T00:00:00.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:14:41.289Z',
+    last_updated: '2021-11-27T11:14:41.289Z'
   },
   {
     id: 'terra-luna',
@@ -424,7 +424,7 @@ const mockData = [
     atl_change_percentage: 35614.75465,
     atl_date: '2020-03-18T17:03:01.083Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:15.875Z',
+    last_updated: '2021-11-27T11:15:15.875Z'
   },
   {
     id: 'wrapped-bitcoin',
@@ -453,7 +453,7 @@ const mockData = [
     atl_change_percentage: 1648.38765,
     atl_date: '2019-04-02T00:00:00.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:31.052Z',
+    last_updated: '2021-11-27T11:15:31.052Z'
   },
   {
     id: 'litecoin',
@@ -482,7 +482,7 @@ const mockData = [
     atl_change_percentage: 17109.64964,
     atl_date: '2015-01-14T00:00:00.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:14:48.730Z',
+    last_updated: '2021-11-27T11:14:48.730Z'
   },
   {
     id: 'binance-usd',
@@ -511,7 +511,7 @@ const mockData = [
     atl_change_percentage: 11.1911,
     atl_date: '2021-05-19T13:04:37.445Z',
     roi: null,
-    last_updated: '2021-11-27T11:14:38.312Z',
+    last_updated: '2021-11-27T11:14:38.312Z'
   },
   {
     id: 'matic-network',
@@ -542,9 +542,9 @@ const mockData = [
     roi: {
       times: 645.5810256833662,
       currency: 'usd',
-      percentage: 64558.10256833662,
+      percentage: 64558.10256833662
     },
-    last_updated: '2021-11-27T11:15:48.099Z',
+    last_updated: '2021-11-27T11:15:48.099Z'
   },
   {
     id: 'chainlink',
@@ -573,7 +573,7 @@ const mockData = [
     atl_change_percentage: 16498.9317,
     atl_date: '2017-11-29T00:00:00.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:14:51.545Z',
+    last_updated: '2021-11-27T11:14:51.545Z'
   },
   {
     id: 'bitcoin-cash',
@@ -602,7 +602,7 @@ const mockData = [
     atl_change_percentage: 637.90288,
     atl_date: '2018-12-16T00:00:00.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:14:38.385Z',
+    last_updated: '2021-11-27T11:14:38.385Z'
   },
   {
     id: 'algorand',
@@ -633,9 +633,9 @@ const mockData = [
     roi: {
       times: -0.29686441419796,
       currency: 'usd',
-      percentage: -29.686441419796,
+      percentage: -29.686441419796
     },
-    last_updated: '2021-11-27T11:14:51.229Z',
+    last_updated: '2021-11-27T11:14:51.229Z'
   },
   {
     id: 'uniswap',
@@ -664,7 +664,7 @@ const mockData = [
     atl_change_percentage: 1830.36061,
     atl_date: '2020-09-17T01:20:38.214Z',
     roi: null,
-    last_updated: '2021-11-27T11:14:54.212Z',
+    last_updated: '2021-11-27T11:14:54.212Z'
   },
   {
     id: 'elrond-erd-2',
@@ -693,7 +693,7 @@ const mockData = [
     atl_change_percentage: 6569.2896,
     atl_date: '2020-10-07T01:44:53.554Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:48.778Z',
+    last_updated: '2021-11-27T11:15:48.778Z'
   },
   {
     id: 'dai',
@@ -722,7 +722,7 @@ const mockData = [
     atl_change_percentage: 10.97511,
     atl_date: '2019-11-25T00:04:18.137Z',
     roi: null,
-    last_updated: '2021-11-27T11:11:11.417Z',
+    last_updated: '2021-11-27T11:11:11.417Z'
   },
   {
     id: 'axie-infinity',
@@ -751,7 +751,7 @@ const mockData = [
     atl_change_percentage: 104670.91807,
     atl_date: '2020-11-06T08:05:43.662Z',
     roi: null,
-    last_updated: '2021-11-27T11:16:03.015Z',
+    last_updated: '2021-11-27T11:16:03.015Z'
   },
   {
     id: 'stellar',
@@ -780,7 +780,7 @@ const mockData = [
     atl_change_percentage: 68615.74271,
     atl_date: '2015-03-05T00:00:00.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:16:07.283Z',
+    last_updated: '2021-11-27T11:16:07.283Z'
   },
   {
     id: 'vechain',
@@ -811,9 +811,9 @@ const mockData = [
     roi: {
       times: 8.96591212218533,
       currency: 'eth',
-      percentage: 896.591212218533,
+      percentage: 896.591212218533
     },
-    last_updated: '2021-11-27T11:15:36.629Z',
+    last_updated: '2021-11-27T11:15:36.629Z'
   },
   {
     id: 'cosmos',
@@ -844,9 +844,9 @@ const mockData = [
     roi: {
       times: 275.8777740639953,
       currency: 'usd',
-      percentage: 27587.77740639953,
+      percentage: 27587.77740639953
     },
-    last_updated: '2021-11-27T11:15:54.220Z',
+    last_updated: '2021-11-27T11:15:54.220Z'
   },
   {
     id: 'internet-computer',
@@ -875,7 +875,7 @@ const mockData = [
     atl_change_percentage: 55.82008,
     atl_date: '2021-07-20T10:14:50.919Z',
     roi: null,
-    last_updated: '2021-11-27T11:14:51.610Z',
+    last_updated: '2021-11-27T11:14:51.610Z'
   },
   {
     id: 'terrausd',
@@ -904,7 +904,7 @@ const mockData = [
     atl_change_percentage: 16.88056,
     atl_date: '2021-05-19T13:14:26.898Z',
     roi: null,
-    last_updated: '2021-11-27T11:16:13.061Z',
+    last_updated: '2021-11-27T11:16:13.061Z'
   },
   {
     id: 'filecoin',
@@ -933,7 +933,7 @@ const mockData = [
     atl_change_percentage: 183.42808,
     atl_date: '2020-12-29T22:32:28.483Z',
     roi: null,
-    last_updated: '2021-11-27T11:16:12.778Z',
+    last_updated: '2021-11-27T11:16:12.778Z'
   },
   {
     id: 'compound-ether',
@@ -962,7 +962,7 @@ const mockData = [
     atl_change_percentage: 4297.90522,
     atl_date: '2020-03-13T02:22:33.711Z',
     roi: null,
-    last_updated: '2021-11-27T11:14:46.130Z',
+    last_updated: '2021-11-27T11:14:46.130Z'
   },
   {
     id: 'tron',
@@ -993,9 +993,9 @@ const mockData = [
     roi: {
       times: 48.98752330240539,
       currency: 'usd',
-      percentage: 4898.752330240539,
+      percentage: 4898.752330240539
     },
-    last_updated: '2021-11-27T11:15:18.767Z',
+    last_updated: '2021-11-27T11:15:18.767Z'
   },
   {
     id: 'ftx-token',
@@ -1024,7 +1024,7 @@ const mockData = [
     atl_change_percentage: 4133.89468,
     atl_date: '2019-09-06T00:00:00.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:16.585Z',
+    last_updated: '2021-11-27T11:15:16.585Z'
   },
   {
     id: 'theta-token',
@@ -1055,9 +1055,9 @@ const mockData = [
     roi: {
       times: 43.91830052716706,
       currency: 'usd',
-      percentage: 4391.830052716706,
+      percentage: 4391.830052716706
     },
-    last_updated: '2021-11-27T11:15:33.795Z',
+    last_updated: '2021-11-27T11:15:33.795Z'
   },
   {
     id: 'okb',
@@ -1086,7 +1086,7 @@ const mockData = [
     atl_change_percentage: 3967.5141,
     atl_date: '2019-01-14T00:00:00.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:14:55.187Z',
+    last_updated: '2021-11-27T11:14:55.187Z'
   },
   {
     id: 'decentraland',
@@ -1117,9 +1117,9 @@ const mockData = [
     roi: {
       times: 234.49464957208085,
       currency: 'usd',
-      percentage: 23449.464957208085,
+      percentage: 23449.464957208085
     },
-    last_updated: '2021-11-27T11:16:21.353Z',
+    last_updated: '2021-11-27T11:16:21.353Z'
   },
   {
     id: 'ethereum-classic',
@@ -1150,9 +1150,9 @@ const mockData = [
     roi: {
       times: 104.12985696414356,
       currency: 'usd',
-      percentage: 10412.985696414356,
+      percentage: 10412.985696414356
     },
-    last_updated: '2021-11-27T11:15:46.966Z',
+    last_updated: '2021-11-27T11:15:46.966Z'
   },
   {
     id: 'staked-ether',
@@ -1181,7 +1181,7 @@ const mockData = [
     atl_change_percentage: 750.98918,
     atl_date: '2020-12-22T04:08:21.854Z',
     roi: null,
-    last_updated: '2021-11-27T11:14:27.625Z',
+    last_updated: '2021-11-27T11:14:27.625Z'
   },
   {
     id: 'hedera-hashgraph',
@@ -1210,7 +1210,7 @@ const mockData = [
     atl_change_percentage: 3359.15479,
     atl_date: '2020-01-02T17:30:24.852Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:49.298Z',
+    last_updated: '2021-11-27T11:15:49.298Z'
   },
   {
     id: 'the-sandbox',
@@ -1239,7 +1239,7 @@ const mockData = [
     atl_change_percentage: 22508.18791,
     atl_date: '2020-11-04T15:59:14.441Z',
     roi: null,
-    last_updated: '2021-11-27T11:16:03.015Z',
+    last_updated: '2021-11-27T11:16:03.015Z'
   },
   {
     id: 'fantom',
@@ -1270,9 +1270,9 @@ const mockData = [
     roi: {
       times: 71.9052242490075,
       currency: 'usd',
-      percentage: 7190.52242490075,
+      percentage: 7190.52242490075
     },
-    last_updated: '2021-11-27T11:14:35.651Z',
+    last_updated: '2021-11-27T11:14:35.651Z'
   },
   {
     id: 'the-graph',
@@ -1301,7 +1301,7 @@ const mockData = [
     atl_change_percentage: 910.21863,
     atl_date: '2020-12-17T21:28:41.332Z',
     roi: null,
-    last_updated: '2021-11-27T11:14:54.805Z',
+    last_updated: '2021-11-27T11:14:54.805Z'
   },
   {
     id: 'gala',
@@ -1330,7 +1330,7 @@ const mockData = [
     atl_change_percentage: 506506.79106,
     atl_date: '2020-12-28T08:46:48.367Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:35.878Z',
+    last_updated: '2021-11-27T11:15:35.878Z'
   },
   {
     id: 'near',
@@ -1359,7 +1359,7 @@ const mockData = [
     atl_change_percentage: 1503.85395,
     atl_date: '2020-11-04T16:09:15.137Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:28.245Z',
+    last_updated: '2021-11-27T11:15:28.245Z'
   },
   {
     id: 'cdai',
@@ -1388,7 +1388,7 @@ const mockData = [
     atl_change_percentage: 198.59774,
     atl_date: '2020-03-18T04:29:40.819Z',
     roi: null,
-    last_updated: '2021-11-27T11:14:46.329Z',
+    last_updated: '2021-11-27T11:14:46.329Z'
   },
   {
     id: 'helium',
@@ -1417,7 +1417,7 @@ const mockData = [
     atl_change_percentage: 36374.12779,
     atl_date: '2020-04-18T00:19:10.902Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:20.622Z',
+    last_updated: '2021-11-27T11:15:20.622Z'
   },
   {
     id: 'monero',
@@ -1446,7 +1446,7 @@ const mockData = [
     atl_change_percentage: 106460.30487,
     atl_date: '2015-01-14T00:00:00.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:16.666Z',
+    last_updated: '2021-11-27T11:15:16.666Z'
   },
   {
     id: 'tezos',
@@ -1477,9 +1477,9 @@ const mockData = [
     roi: {
       times: 9.055358663465885,
       currency: 'usd',
-      percentage: 905.5358663465885,
+      percentage: 905.5358663465885
     },
-    last_updated: '2021-11-27T11:14:34.799Z',
+    last_updated: '2021-11-27T11:14:34.799Z'
   },
   {
     id: 'compound-usd-coin',
@@ -1508,7 +1508,7 @@ const mockData = [
     atl_change_percentage: 261.27831,
     atl_date: '2021-03-04T08:11:37.438Z',
     roi: null,
-    last_updated: '2021-11-27T11:14:46.609Z',
+    last_updated: '2021-11-27T11:14:46.609Z'
   },
   {
     id: 'iota',
@@ -1539,9 +1539,9 @@ const mockData = [
     roi: {
       times: 18.352020647563254,
       currency: 'btc',
-      percentage: 1835.2020647563254,
+      percentage: 1835.2020647563254
     },
-    last_updated: '2021-11-27T11:15:43.856Z',
+    last_updated: '2021-11-27T11:15:43.856Z'
   },
   {
     id: 'radix',
@@ -1570,7 +1570,7 @@ const mockData = [
     atl_change_percentage: 363.46847,
     atl_date: '2021-09-13T04:50:07.104Z',
     roi: null,
-    last_updated: '2021-11-27T11:14:32.491Z',
+    last_updated: '2021-11-27T11:14:32.491Z'
   },
   {
     id: 'eos',
@@ -1601,9 +1601,9 @@ const mockData = [
     roi: {
       times: 2.9662619224465727,
       currency: 'usd',
-      percentage: 296.62619224465726,
+      percentage: 296.62619224465726
     },
-    last_updated: '2021-11-27T11:15:01.182Z',
+    last_updated: '2021-11-27T11:15:01.182Z'
   },
   {
     id: 'flow',
@@ -1632,7 +1632,7 @@ const mockData = [
     atl_change_percentage: 146.27201,
     atl_date: '2021-01-27T15:34:04.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:45.738Z',
+    last_updated: '2021-11-27T11:15:45.738Z'
   },
   {
     id: 'loopring',
@@ -1663,9 +1663,9 @@ const mockData = [
     roi: {
       times: 49.6771467621348,
       currency: 'usd',
-      percentage: 4967.71467621348,
+      percentage: 4967.71467621348
     },
-    last_updated: '2021-11-27T11:14:40.984Z',
+    last_updated: '2021-11-27T11:14:40.984Z'
   },
   {
     id: 'olympus',
@@ -1694,7 +1694,7 @@ const mockData = [
     atl_change_percentage: 344.1121,
     atl_date: '2021-05-23T22:25:07.703Z',
     roi: null,
-    last_updated: '2021-11-27T11:13:38.701Z',
+    last_updated: '2021-11-27T11:13:38.701Z'
   },
   {
     id: 'enjincoin',
@@ -1723,7 +1723,7 @@ const mockData = [
     atl_change_percentage: 20294.42974,
     atl_date: '2017-11-12T00:00:00.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:52.919Z',
+    last_updated: '2021-11-27T11:15:52.919Z'
   },
   {
     id: 'klay-token',
@@ -1752,7 +1752,7 @@ const mockData = [
     atl_change_percentage: 2220.25873,
     atl_date: '2020-04-29T08:19:34.574Z',
     roi: null,
-    last_updated: '2021-11-27T11:16:08.987Z',
+    last_updated: '2021-11-27T11:16:08.987Z'
   },
   {
     id: 'thorchain',
@@ -1783,9 +1783,9 @@ const mockData = [
     roi: {
       times: 314.89602081211314,
       currency: 'usd',
-      percentage: 31489.602081211317,
+      percentage: 31489.602081211317
     },
-    last_updated: '2021-11-27T11:14:46.136Z',
+    last_updated: '2021-11-27T11:14:46.136Z'
   },
   {
     id: 'magic-internet-money',
@@ -1814,7 +1814,7 @@ const mockData = [
     atl_change_percentage: 7.70233,
     atl_date: '2021-07-26T01:08:30.998Z',
     roi: null,
-    last_updated: '2021-11-27T11:14:30.973Z',
+    last_updated: '2021-11-27T11:14:30.973Z'
   },
   {
     id: 'pancakeswap-token',
@@ -1843,7 +1843,7 @@ const mockData = [
     atl_change_percentage: 6765.52912,
     atl_date: '2020-11-03T14:29:34.165Z',
     roi: null,
-    last_updated: '2021-11-27T11:16:11.574Z',
+    last_updated: '2021-11-27T11:16:11.574Z'
   },
   {
     id: 'aave',
@@ -1872,7 +1872,7 @@ const mockData = [
     atl_change_percentage: 821.20462,
     atl_date: '2020-11-05T09:20:11.928Z',
     roi: null,
-    last_updated: '2021-11-27T11:14:57.440Z',
+    last_updated: '2021-11-27T11:14:57.440Z'
   },
   {
     id: 'zcash',
@@ -1901,7 +1901,7 @@ const mockData = [
     atl_change_percentage: 1264.55014,
     atl_date: '2020-03-13T02:20:55.002Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:48.588Z',
+    last_updated: '2021-11-27T11:15:48.588Z'
   },
   {
     id: 'arweave',
@@ -1932,9 +1932,9 @@ const mockData = [
     roi: {
       times: 80.16265844671258,
       currency: 'usd',
-      percentage: 8016.2658446712585,
+      percentage: 8016.2658446712585
     },
-    last_updated: '2021-11-27T11:15:13.782Z',
+    last_updated: '2021-11-27T11:15:13.782Z'
   },
   {
     id: 'ecash',
@@ -1963,7 +1963,7 @@ const mockData = [
     atl_change_percentage: 753.5775,
     atl_date: '2021-07-20T20:49:46.212Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:23.888Z',
+    last_updated: '2021-11-27T11:15:23.888Z'
   },
   {
     id: 'kusama',
@@ -1992,7 +1992,7 @@ const mockData = [
     atl_change_percentage: 37640.36256,
     atl_date: '2020-01-14T19:20:20.768Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:59.798Z',
+    last_updated: '2021-11-27T11:15:59.798Z'
   },
   {
     id: 'leo-token',
@@ -2021,7 +2021,7 @@ const mockData = [
     atl_change_percentage: 289.76242,
     atl_date: '2019-12-24T15:14:35.376Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:30.442Z',
+    last_updated: '2021-11-27T11:15:30.442Z'
   },
   {
     id: 'harmony',
@@ -2052,9 +2052,9 @@ const mockData = [
     roi: {
       times: 84.6208805470795,
       currency: 'usd',
-      percentage: 8462.08805470795,
+      percentage: 8462.08805470795
     },
-    last_updated: '2021-11-27T11:15:45.537Z',
+    last_updated: '2021-11-27T11:15:45.537Z'
   },
   {
     id: 'quant-network',
@@ -2085,9 +2085,9 @@ const mockData = [
     roi: {
       times: 21.1165861296324,
       currency: 'eth',
-      percentage: 2111.65861296324,
+      percentage: 2111.65861296324
     },
-    last_updated: '2021-11-27T11:15:31.650Z',
+    last_updated: '2021-11-27T11:15:31.650Z'
   },
   {
     id: 'maker',
@@ -2116,7 +2116,7 @@ const mockData = [
     atl_change_percentage: 1771.61665,
     atl_date: '2020-03-16T20:52:36.527Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:29.678Z',
+    last_updated: '2021-11-27T11:15:29.678Z'
   },
   {
     id: 'amp-token',
@@ -2145,7 +2145,7 @@ const mockData = [
     atl_change_percentage: 2260.35176,
     atl_date: '2020-11-04T13:18:12.191Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:03.519Z',
+    last_updated: '2021-11-27T11:15:03.519Z'
   },
   {
     id: 'kadena',
@@ -2176,9 +2176,9 @@ const mockData = [
     roi: {
       times: 16.61125043079394,
       currency: 'usd',
-      percentage: 1661.125043079394,
+      percentage: 1661.125043079394
     },
-    last_updated: '2021-11-27T11:14:42.997Z',
+    last_updated: '2021-11-27T11:14:42.997Z'
   },
   {
     id: 'bitcoin-cash-sv',
@@ -2207,7 +2207,7 @@ const mockData = [
     atl_change_percentage: 250.69558,
     atl_date: '2018-11-23T00:00:00.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:14:21.263Z',
+    last_updated: '2021-11-27T11:14:21.263Z'
   },
   {
     id: 'neo',
@@ -2238,9 +2238,9 @@ const mockData = [
     roi: {
       times: 1060.7357237418382,
       currency: 'usd',
-      percentage: 106073.57237418383,
+      percentage: 106073.57237418383
     },
-    last_updated: '2021-11-27T11:14:44.572Z',
+    last_updated: '2021-11-27T11:14:44.572Z'
   },
   {
     id: 'chiliz',
@@ -2271,9 +2271,9 @@ const mockData = [
     roi: {
       times: 19.995441235189837,
       currency: 'usd',
-      percentage: 1999.5441235189837,
+      percentage: 1999.5441235189837
     },
-    last_updated: '2021-11-27T11:14:42.727Z',
+    last_updated: '2021-11-27T11:14:42.727Z'
   },
   {
     id: 'basic-attention-token',
@@ -2304,9 +2304,9 @@ const mockData = [
     roi: {
       times: 1.3496986344082407,
       currency: 'eth',
-      percentage: 134.96986344082407,
+      percentage: 134.96986344082407
     },
-    last_updated: '2021-11-27T11:14:48.349Z',
+    last_updated: '2021-11-27T11:14:48.349Z'
   },
   {
     id: 'holotoken',
@@ -2337,9 +2337,9 @@ const mockData = [
     roi: {
       times: 12.295656772948398,
       currency: 'eth',
-      percentage: 1229.5656772948398,
+      percentage: 1229.5656772948398
     },
-    last_updated: '2021-11-27T11:15:56.017Z',
+    last_updated: '2021-11-27T11:15:56.017Z'
   },
   {
     id: 'bitcoin-cash-abc-2',
@@ -2368,7 +2368,7 @@ const mockData = [
     atl_change_percentage: 1177.80952,
     atl_date: '2020-11-15T18:28:32.658Z',
     roi: null,
-    last_updated: '2021-11-27T11:04:23.177Z',
+    last_updated: '2021-11-27T11:04:23.177Z'
   },
   {
     id: 'huobi-btc',
@@ -2397,7 +2397,7 @@ const mockData = [
     atl_change_percentage: 389.01462,
     atl_date: '2020-10-12T03:56:16.768Z',
     roi: null,
-    last_updated: '2021-11-27T11:14:29.985Z',
+    last_updated: '2021-11-27T11:14:29.985Z'
   },
   {
     id: 'bittorrent-2',
@@ -2428,9 +2428,9 @@ const mockData = [
     roi: {
       times: 25.880181176345015,
       currency: 'usd',
-      percentage: 2588.018117634502,
+      percentage: 2588.018117634502
     },
-    last_updated: '2021-11-27T11:16:21.020Z',
+    last_updated: '2021-11-27T11:16:21.020Z'
   },
   {
     id: 'curve-dao-token',
@@ -2459,7 +2459,7 @@ const mockData = [
     atl_change_percentage: 1496.70475,
     atl_date: '2020-11-05T13:09:50.181Z',
     roi: null,
-    last_updated: '2021-11-27T11:16:20.590Z',
+    last_updated: '2021-11-27T11:16:20.590Z'
   },
   {
     id: 'blockstack',
@@ -2490,9 +2490,9 @@ const mockData = [
     roi: {
       times: 14.909889629013025,
       currency: 'usd',
-      percentage: 1490.9889629013026,
+      percentage: 1490.9889629013026
     },
-    last_updated: '2021-11-27T11:15:26.117Z',
+    last_updated: '2021-11-27T11:15:26.117Z'
   },
   {
     id: 'waves',
@@ -2523,9 +2523,9 @@ const mockData = [
     roi: {
       times: 104.97526037292718,
       currency: 'usd',
-      percentage: 10497.526037292719,
+      percentage: 10497.526037292719
     },
-    last_updated: '2021-11-27T11:16:11.821Z',
+    last_updated: '2021-11-27T11:16:11.821Z'
   },
   {
     id: 'dash',
@@ -2554,7 +2554,7 @@ const mockData = [
     atl_change_percentage: 88114.3843,
     atl_date: '2014-02-14T00:00:00.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:36.634Z',
+    last_updated: '2021-11-27T11:15:36.634Z'
   },
   {
     id: 'theta-fuel',
@@ -2583,7 +2583,7 @@ const mockData = [
     atl_change_percentage: 34830.24508,
     atl_date: '2020-03-13T02:30:37.972Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:49.693Z',
+    last_updated: '2021-11-27T11:15:49.693Z'
   },
   {
     id: 'kucoin-shares',
@@ -2612,7 +2612,7 @@ const mockData = [
     atl_change_percentage: 6753.78436,
     atl_date: '2019-02-07T00:00:00.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:16:18.930Z',
+    last_updated: '2021-11-27T11:16:18.930Z'
   },
   {
     id: 'safemoon',
@@ -2641,7 +2641,7 @@ const mockData = [
     atl_change_percentage: 6814.8095,
     atl_date: '2021-03-14T19:51:56.741Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:58.732Z',
+    last_updated: '2021-11-27T11:15:58.732Z'
   },
   {
     id: 'celo',
@@ -2670,7 +2670,7 @@ const mockData = [
     atl_change_percentage: 519.33703,
     atl_date: '2020-05-22T04:15:27.736Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:32.043Z',
+    last_updated: '2021-11-27T11:15:32.043Z'
   },
   {
     id: 'compound-governance-token',
@@ -2699,7 +2699,7 @@ const mockData = [
     atl_change_percentage: 343.81445,
     atl_date: '2020-06-18T12:54:32.788Z',
     roi: null,
-    last_updated: '2021-11-27T11:16:13.641Z',
+    last_updated: '2021-11-27T11:16:13.641Z'
   },
   {
     id: 'wonderland',
@@ -2728,7 +2728,7 @@ const mockData = [
     atl_change_percentage: 1237.23681,
     atl_date: '2021-09-02T23:16:06.662Z',
     roi: null,
-    last_updated: '2021-11-27T11:14:53.788Z',
+    last_updated: '2021-11-27T11:14:53.788Z'
   },
   {
     id: 'celsius-degree-token',
@@ -2759,9 +2759,9 @@ const mockData = [
     roi: {
       times: 12.16390554818699,
       currency: 'usd',
-      percentage: 1216.390554818699,
+      percentage: 1216.390554818699
     },
-    last_updated: '2021-11-27T11:16:03.731Z',
+    last_updated: '2021-11-27T11:16:03.731Z'
   },
   {
     id: 'iotex',
@@ -2790,7 +2790,7 @@ const mockData = [
     atl_change_percentage: 14154.98641,
     atl_date: '2020-03-13T02:29:47.597Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:51.829Z',
+    last_updated: '2021-11-27T11:15:51.829Z'
   },
   {
     id: 'ethereum-name-service',
@@ -2819,7 +2819,7 @@ const mockData = [
     atl_change_percentage: 336.28365,
     atl_date: '2021-11-09T00:39:17.549Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:37.071Z',
+    last_updated: '2021-11-27T11:15:37.071Z'
   },
   {
     id: 'e-radix',
@@ -2848,7 +2848,7 @@ const mockData = [
     atl_change_percentage: 608.65855,
     atl_date: '2020-11-25T11:31:13.036Z',
     roi: null,
-    last_updated: '2021-11-27T11:16:16.899Z',
+    last_updated: '2021-11-27T11:16:16.899Z'
   },
   {
     id: 'livepeer',
@@ -2877,7 +2877,7 @@ const mockData = [
     atl_change_percentage: 17812.9442,
     atl_date: '2019-10-26T22:59:09.500Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:34.812Z',
+    last_updated: '2021-11-27T11:15:34.812Z'
   },
   {
     id: 'link',
@@ -2906,7 +2906,7 @@ const mockData = [
     atl_change_percentage: 24576.76066,
     atl_date: '2018-12-26T00:00:00.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:10:50.722Z',
+    last_updated: '2021-11-27T11:10:50.722Z'
   },
   {
     id: 'huobi-token',
@@ -2937,9 +2937,9 @@ const mockData = [
     roi: {
       times: 8.682723260986194,
       currency: 'usd',
-      percentage: 868.2723260986193,
+      percentage: 868.2723260986193
     },
-    last_updated: '2021-11-27T11:15:14.798Z',
+    last_updated: '2021-11-27T11:15:14.798Z'
   },
   {
     id: 'immutable-x',
@@ -2968,7 +2968,7 @@ const mockData = [
     atl_change_percentage: 165.50978,
     atl_date: '2021-11-08T20:28:41.748Z',
     roi: null,
-    last_updated: '2021-11-27T11:15:37.259Z',
+    last_updated: '2021-11-27T11:15:37.259Z'
   },
   {
     id: 'qtum',
@@ -2999,9 +2999,9 @@ const mockData = [
     roi: {
       times: 47.87364418758843,
       currency: 'usd',
-      percentage: 4787.364418758843,
+      percentage: 4787.364418758843
     },
-    last_updated: '2021-11-27T11:14:30.792Z',
+    last_updated: '2021-11-27T11:14:30.792Z'
   },
   {
     id: 'nem',
@@ -3030,6 +3030,6 @@ const mockData = [
     atl_change_percentage: 197010.20036,
     atl_date: '2015-09-05T00:00:00.000Z',
     roi: null,
-    last_updated: '2021-11-27T11:14:58.740Z',
-  },
+    last_updated: '2021-11-27T11:14:58.740Z'
+  }
 ].slice(0, 20);

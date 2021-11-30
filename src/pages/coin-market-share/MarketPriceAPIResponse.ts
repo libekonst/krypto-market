@@ -1,7 +1,7 @@
 import { isNumber } from '../../lib/isNumber';
 import { isString } from '../../lib/isString';
 
-export type CoinMarketPrice = {
+export type MarketPriceAPIResponse = {
   id: string;
   symbol: string;
   name: string;
@@ -13,7 +13,9 @@ export type CoinMarketPrice = {
   price_change_percentage_24h: number;
 };
 
-export const isCoinMarketPrice = (data: any): data is CoinMarketPrice => {
+export const isMarketPriceAPIResponse = (
+  data: any
+): data is MarketPriceAPIResponse => {
   return (
     'id' in data &&
     'symbol' in data &&

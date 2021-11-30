@@ -14,7 +14,7 @@ import { PriceMetricLabel } from '../PriceMetricLabel';
 import { CoinThumb } from '../CoinThumb';
 import { NamePriceBox } from '../NamePriceBox';
 import { getCoinMarketPrices } from './api';
-import { CoinMarketPrice } from './CoinMarketPrice';
+import { MarketPriceAPIResponse } from './MarketPriceAPIResponse';
 
 export function PriceTable() {
   const [paginationCount, setPaginationCount] = useState(1);
@@ -25,7 +25,9 @@ export function PriceTable() {
   );
   const res = useDataLoader(getData);
 
-  const [accumulatedData, setAccumulatedData] = useState<CoinMarketPrice[]>([]);
+  const [accumulatedData, setAccumulatedData] = useState<
+    MarketPriceAPIResponse[]
+  >([]);
   useEffect(() => {
     if (isSuccess(res)) setAccumulatedData(prev => [...prev, ...res.data]);
   }, [res]);

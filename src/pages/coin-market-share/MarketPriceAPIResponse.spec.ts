@@ -1,6 +1,6 @@
-import { isCoinMarketPrice } from './CoinMarketPrice';
+import { isMarketPriceAPIResponse } from './MarketPriceAPIResponse';
 
-test('isCoinMarketPrice asserts the input is of type CoinMarketPrice when all the required properties are met', () => {
+test('isMarketPriceAPIResponse asserts the input is of type MarketPriceAPIResponse when all the required properties are met', () => {
   const coinStrict = {
     id: 'bitcoin',
     symbol: 'btc',
@@ -14,10 +14,10 @@ test('isCoinMarketPrice asserts the input is of type CoinMarketPrice when all th
     price_change_percentage_24h: 1.303
   };
 
-  expect(isCoinMarketPrice(coinStrict)).toBe(true);
+  expect(isMarketPriceAPIResponse(coinStrict)).toBe(true);
 });
 
-test('isCoinMarketPrice asserts the input is of type CoinMarketPrice, whitelisting additional properties', () => {
+test('isMarketPriceAPIResponse asserts the input is of type MarketPriceAPIResponse, whitelisting additional properties', () => {
   const coinStrict = {
     id: 'bitcoin',
     symbol: 'btc',
@@ -48,10 +48,10 @@ test('isCoinMarketPrice asserts the input is of type CoinMarketPrice, whitelisti
     last_updated: '2021-11-27T11:15:11.706Z'
   };
 
-  expect(isCoinMarketPrice(coinStrict)).toBe(true);
+  expect(isMarketPriceAPIResponse(coinStrict)).toBe(true);
 });
 
-test('isCoinMarketPrice returns false when the input is missing requiredProperties', () => {
+test('isMarketPriceAPIResponse returns false when the input is missing requiredProperties', () => {
   const coinWithMissingProperties = {
     name: 'Bitcoin',
     image:
@@ -80,5 +80,5 @@ test('isCoinMarketPrice returns false when the input is missing requiredProperti
     last_updated: '2021-11-27T11:15:11.706Z'
   };
 
-  expect(isCoinMarketPrice(coinWithMissingProperties)).toBe(false);
+  expect(isMarketPriceAPIResponse(coinWithMissingProperties)).toBe(false);
 });
