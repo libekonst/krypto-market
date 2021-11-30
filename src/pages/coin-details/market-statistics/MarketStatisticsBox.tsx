@@ -41,4 +41,5 @@ export function MarketStatisticsBox({ coinAnalysis }: Props) {
 const WrapperBox = styled.section`
   flex: 1;
   padding: 1rem;
+  max-width: 45vw;
 `;
