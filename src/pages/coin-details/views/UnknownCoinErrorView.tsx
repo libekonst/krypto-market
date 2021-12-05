@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ImageCatalog } from '../../../assets/images/ImageCatalog';
+import { routes } from '../../../routes';
 import { ErrorPageScaffold } from '../../../ui-kit/layout/ErrorPageScaffold';
 
 export function UnknownCoinErrorView() {
@@ -9,17 +10,17 @@ export function UnknownCoinErrorView() {
       <p>Try one of these instead</p>
       <ul>
         <li>
-          <Link to="/bitcoin">Bitcoin</Link>
+          <Link to={routes.coin('bitcoin')}>Bitcoin</Link>
         </li>
         <li>
-          <Link to="/ethereum">Ethereum</Link>
+          <Link to={routes.coin('ethereum')}>Ethereum</Link>
         </li>
         <li>
-          <Link to="/binancecoin">Binance Coin</Link>
+          <Link to={routes.coin('binancecoin')}>Binance Coin</Link>
         </li>
       </ul>
       <p>
-        or <Link to="/">go back Home</Link>
+        or <Link to={routes.home()}>go back Home</Link>
       </p>
     </ErrorPageScaffold>
   );

@@ -15,6 +15,7 @@ import { CoinThumb } from '../CoinThumb';
 import { NamePriceBox } from '../NamePriceBox';
 import { fetchCoinMarketPrices } from './api/fetchCoinMarketPrices';
 import { MarketPrice } from './MarketPrice';
+import { routes } from '../../routes';
 
 export function PriceTable() {
   const [paginationCount, setPaginationCount] = useState(1);
@@ -33,7 +34,7 @@ export function PriceTable() {
   return (
     <Wrapper>
       {accumulatedData.map((coin, i) => (
-        <Link key={i} href={`/${coin.id}`}>
+        <Link key={i} href={routes.coin(coin.id)}>
           <Row mainAxis="space-between">
             <Row>
               <CoinThumb src={coin.image} />
